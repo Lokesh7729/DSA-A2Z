@@ -1,28 +1,35 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-
+int main()
+{
     int n;
+    cout << "enter the size of array :";
     cin >> n;
     int arr[n];
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
+        cout << "enter " << i + 1 << " element :";
         cin >> arr[i];
     }
 
-    //precompute:
+    // pre computation
+
     int hash[13] = {0};
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         hash[arr[i]] += 1;
     }
 
-    int q;
-    cin >> q;
-    while (q--) {
+    int query;
+    cout << "enter the number of queries : ";
+    cin >> query;
+    while (query--)
+    {
         int number;
         cin >> number;
-        // fetching:
-        cout << hash[number] << endl;
+
+        // fetch
+        cout << number << "  is " << hash[number] << " times " << endl;
     }
-    return 0;
 }
